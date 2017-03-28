@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Practice</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+</head>
+<body ng-app>
+    <div ng-init="roster=[]; maxSignups=5; name=''">
+        <input type="text" ng-model="name">
+        <p ng-show="roster.length>=maxSignups">This class is full!</p>
+        <button ng-click="roster.push(name); name=''" ng-disable="roster.length >= maxSignups">Add to list</button>
+        <ol>
+            <li ng-repeat="person in roster track by $index">{{person}}</li>
+        </ol>
+
+    </div>
+</body>
+</html>
